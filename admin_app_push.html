@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>应用推送</title>
+    <link rel="stylesheet" href="css/admin_base.css" type="text/css" />
+    <link rel="stylesheet" href="css/admin_app_push.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/tempo-2.0.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.bbq.js"></script>
+    <script type="text/javascript" src="js/jquery.sha1.js"></script>
+    <script type="text/javascript" src="js/momo_base.js"></script>
+    <script type="text/javascript" src="js/admin_base.js"></script>
+    <script type="text/javascript" src="js/admin_base_main.js"></script>
+    <script type="text/javascript" src="js/admin_app_push.js"></script>
+  </head>
+
+  <body>
+    <div class="frm_container">
+      <div class="frm_left" id="siteleft"></div>
+      <div class="frm_right">
+        <div class="frm_right_top">
+          <div class="top_right">
+            <div class="userinfo" id="userinfo"></div>
+            <div class="icon"><span class="config" />
+            </div>
+            <div class="icon"><span class="logout" />
+            </div>
+          </div>
+        </div>
+        <div class="frm_right_content">
+          <div id="dv__content">
+            <div class="div_title">
+              <h1>应用推送</h1>
+              <span class="span_title">已发送<input type="radio" name="show" value="2"/></span>
+              <span class="span_title">未发送<input type="radio" name="show" value="1" checked="checked"/></span>
+              <span class="span_title"><select name="appid"></select></span>
+              <span class="span_title"><button class="btn_add">添加</button></span>
+            </div>
+            <div id="msg_list" class="div_push_container">
+              <div data-template>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">推送内容：</span><span class="span_entry_list_right">{{msg}}</span>
+                </div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">更新标记：</span><span class="span_entry_list_right">{{badge}}</span>
+                </div>
+                <div class="clear"></div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">输入时间：</span><span class="span_entry_list_right">{{input_date}}</span> </div>
+                {%if send_date%}
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">发送时间：</span><span class="span_entry_list_right">{{send_date}}</span>
+                </div>
+                {% else %}
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">&nbsp;</span><span class="span_entry_list_right">&nbsp;</span>
+                </div>
+                {% endif %}
+                <div class="clear_both"></div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">参数名1：</span><span class="span_entry_list_right">{{paramKey1}}</span>
+                </div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">参数值1：</span><span class="span_entry_list_right">{{paramValue1}}</span>
+                </div>
+                <div class="clear_both"></div>
+                <div class="div_entry_list_row div_entry_hide">
+                  <span class="span_entry_list_left">参数名2：</span><span class="span_entry_list_right">{{paramKey2}}</span>
+                </div>
+                <div class="div_entry_list_row div_entry_hide">
+                  <span class="span_entry_list_left">参数值2：</span><span class="span_entry_list_right">{{paramValue2}}</span>
+                </div>
+                <div class="clear_both"></div>
+                <div class="div_entry_list_row div_entry_hide">
+                  <span class="span_entry_list_left">参数名3：</span><span class="span_entry_list_right">{{paramKey3}}</span>
+                </div>
+                <div class="div_entry_list_row div_entry_hide">
+                  <span class="span_entry_list_left">参数值3：</span><span class="span_entry_list_right">{{paramValue3}}</span>
+                </div>
+                <div class="clear_both"></div>
+                <div class="div_entry_list_row div_entry_hide">
+                  <span class="span_entry_list_left">参数名4：</span><span class="span_entry_list_right">{{paramKey4}}</span>
+                </div>
+                <div class="div_entry_list_row div_entry_hide">
+                  <span class="span_entry_list_left">参数值4：</span><span class="span_entry_list_right">{{paramValue4}}</span>
+                </div>
+                <div class="clear_both"></div>
+                <div class="div_entry_list_row div_entry_hide">
+                  <span class="span_entry_list_left">参数名5：</span><span class="span_entry_list_right">{{paramKey5}}</span>
+                </div>
+                <div class="div_entry_list_row div_entry_hide">
+                  <span class="span_entry_list_left">参数值5：</span><span class="span_entry_list_right">{{paramValue5}}</span>
+                </div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">发送对象：</span><span class="span_entry_list_right">{%if audience == 'product' %}全部用户{% else %}测试用户{% endif %}</span>
+                </div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">&nbsp;</span><span class="span_entry_list_right">&nbsp;</span>
+                </div>
+                {% if memo %}
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">备注：</span><span class="span_entry_list_right">{{memo}}</span>
+                </div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">&nbsp;</span><span class="span_entry_list_right">&nbsp;</span>
+                </div>
+                {% endif %}
+                {% if fuse_date %}
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">设定发送时间：</span><span class="span_entry_list_right">{{fuse_date}}</span>
+                </div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">&nbsp;</span><span class="span_entry_list_right">&nbsp;</span>
+                </div>
+                {% endif %}
+                <div class="clear_both"></div>
+
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">标题：</span><span class="span_entry_list_right">{{title}}</span>
+                </div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">确认按钮文本：</span><span class="span_entry_list_right">{{confirmText}}</span>
+                </div>
+                <div class="clear_both"></div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">取消按钮文本：</span><span class="span_entry_list_right">{{cancelText}}</span>
+                </div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">消息接收人群：</span><span class="span_entry_list_right">{% if msgType == 1 %}全部用户{% else %}&nbsp;{% endif %}{% if msgType == 2 %}未接收推送用户{% else %}&nbsp;{% endif %}</span>
+                </div>
+                <div class="clear_both"></div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">消息图片id：</span><span class="span_entry_list_right">{{imgId}}</span>
+                </div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">消息过期时间：</span><span class="span_entry_list_right">{{expire}}</span>
+                </div>
+                <div class="clear_both"></div>
+
+                {%if sended_number %}
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">推送发送数量：</span><span class="span_entry_list_right">{{sended_number}}</span>
+                </div>
+                <div class="div_entry_list_row">
+                  <span class="span_entry_list_left">&nbsp;</span><span class="span_entry_list_right">&nbsp;</span>
+                </div>
+                <div class="clear_both"></div>
+                {% endif %}
+
+                <div class="div_entry_list_row div_entry_bottom">
+                  <span class="span_entry_list_left">&nbsp;</span><span class="span_entry_list_right">&nbsp;</span>
+                </div>
+                {%if send_date %}
+                <div class="div_entry_list_row div_entry_bottom">
+                  <span class="span_entry_list_left"><button _id="{{_id}}" class="btn_sended_copy">复制</button></span><span class="span_entry_list_right">&nbsp;</span>
+                </div>
+                {% else %}
+                <div class="div_entry_list_row div_entry_bottom">
+                  <span class="span_entry_list_left"><button _id="{{_id}}" class='btn_unsend_edit'>修改</button><button _id="{{_id}}" class='btn_unsend_delete'>删除</button></span><span class="span_entry_list_right">&nbsp;</span>
+                </div>
+                {% endif %}
+                <div class="clear_both"></div>
+              </div>
+            </div>
+            <div class="dv_pagination">
+              <div id="pagination" data-template>
+                <ul>
+                  <li p="{{first}}" class="first_page active_page_li">首页</li><li p="{{previous}}" class="previous_page active_page_li">上一页</li>
+                  <span><li p="{{page}}" class="middle_pages active_page_li" data-template-for="pages">&nbsp;{{page}}&nbsp;</li></span>
+                  <li p="{{next}}" class="next_page active_page_li">下一页</li><li p="{{last}}" class="last_page active_page_li">最后一页</li>
+                </ul>
+                共1页&nbsp;&nbsp;跳转至：<input type="text"><button>Go</button>
+              </div>
+            </div>
+            <div class="promptMessageGlass">
+              <div class="promptbox promptbox_dv">
+                <div id="msg_add_container" data-template>
+                  <div style="text-align: right;"><span class="span_close">close</span></div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left"><span class="span_note">*</span>推送内容：</span><span class="span_entry_right"><textarea class="input_text id_msg">{{msg}}</textarea></span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">更新标记：</span><span class="span_entry_right"><input type="text" class="input_text id_badge" value="{{badge}}"/><span class="span_note">(应用图标右上角所显示的数字)</span></span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">参数名1：</span>
+                    <span class="span_entry_right">
+                      <select class="input_text id_key1">
+                        <option value='default'>简单通知(通用)</option>
+                        <option value='url'>aries 网址</option>
+                        <option value='color'>aries 颜色专题</option>
+                        <option value='wp'>taurus 网址</option>
+                        <option value='as'>taurus 应用地址</option>
+                      </select>
+                    </span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">参数值1：</span><span class="span_entry_right"><input type="text" class="input_text id_value1" value="{{paramValue1}}"/></span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">参数名2：</span><span class="span_entry_right"><input type="text" class="input_text id_key2" value="{{paramKey2}}"/></span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">参数值2：</span><span class="span_entry_right"><input type="text" class="input_text id_value2" value="{{paramValue2}}"/></span>
+                  </div>
+                  <div class="div_entry_row div_entry_hide">
+                    <span class="span_entry_left">参数名3：</span><span class="span_entry_right"><input type="text" class="input_text id_key3" value="{{paramKey3}}"/></span>
+                  </div>
+                  <div class="div_entry_row div_entry_hide">
+                    <span class="span_entry_left">参数值3：</span><span class="span_entry_right"><input type="text" class="input_text id_value3" value="{{paramValue3}}"/></span>
+                  </div>
+                  <div class="div_entry_row div_entry_hide">
+                    <span class="span_entry_left">参数名4：</span><span class="span_entry_right"><input type="text" class="input_text id_key4" value="{{paramKey4}}"/></span>
+                  </div>
+                  <div class="div_entry_row div_entry_hide">
+                    <span class="span_entry_left">参数值4：</span><span class="span_entry_right"><input type="text" class="input_text id_value4" value="{{paramValue4}}"/></span>
+                  </div>
+                  <div class="div_entry_row div_entry_hide">
+                    <span class="span_entry_left">参数名5：</span><span class="span_entry_right"><input type="text" class="input_text id_key5" value="{{paramKey5}}"/></span>
+                  </div>
+                  <div class="div_entry_row div_entry_hide">
+                    <span class="span_entry_left">参数值5：</span><span class="span_entry_right"><input type="text" class="input_text id_value5" value="{{paramValue5}}"/></span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">发送对象：</span>
+                    <span class="span_entry_right">
+                      <select class="input_text id_audience">
+                        <option value='dev'>测试用户</option>
+                        <option value='product'>全部用户</option>
+                      </select>
+                    </span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">选择应用：</span><span class="span_entry_right"><select class="id_appid" name="appid"></select></span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">设定发送时间：</span><span class="span_entry_right"><input type="text" class="id_fuse_date" value="{{fuse_date}}"><span class="span_note">(时间格式：YYYY-mm-dd HH:MM.留空则不设置)</span></span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">标题：</span><span class="span_entry_right"><input type="text" class="input_text id_title" value="{{title}}"/></span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">确认按钮文本：</span><span class="span_entry_right"><input type="text" class="input_text id_btn_ok" value="{{confirmText}}"/></span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">取消按钮文本：</span><span class="span_entry_right"><input type="text" class="input_text id_btn_cancel" value="{{cancelText}}"/></span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">消息接受人群：</span>
+                    <span class="span_entry_right">
+                      <select class="input_text id_msg_type">
+                        <option value='1'>全部用户</option>
+                        <option value='2'>未接收推送用户</option>
+                      </select>
+                    </span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">消息图片id：</span><span class="span_entry_right"><input type="text" class="input_text id_img_id" value="{{imgId}}"/><button class="id_check_img">检查图片</button></span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">消息图片：</span><span class="span_entry_right"><img class="id_msg_img" src="http://www.sugarlady.com/api/fqimage{{imgId}}"/></span>
+                  </div>
+                  <div class="div_entry_row">
+                    <span class="span_entry_left">消息过期时间：</span><span class="span_entry_right"><input type="text" class="id_expire" value="{{expire}}"><span class="span_note">(时间格式：YYYY-mm-dd HH:MM.留空则不设置)</span></span>
+                  </div>
+                </div>
+                <div class="div_entry_row div_entry_bottom" data-after-template>
+                  <button class="id_save_btn">保存</button><span class="span_note">(说明：根据Apple的限制， 以上内容总长度不能超过256个字节)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

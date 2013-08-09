@@ -1,0 +1,131 @@
+/* head */
+h1 {
+  font-size: 25px;
+  font-weight: 700;
+  color: #999999;
+  display: inline;
+}
+.h1_small {
+  font-size: 20px;
+}
+.span_title {
+  float: right;
+  margin: 5px;
+}
+
+/* content */
+.div_push_container {
+  margin: 5px;
+}
+.span_entry_left {
+  display: inline-block;
+  min-width: 200px;
+  font-size: 17px;
+}
+.span_entry_right {
+  display: inline-block;
+  width: 550px;
+}
+.span_note {
+  color: red;
+}
+.input_text {
+  width: 300px;
+}
+.btn_unsend_delete {
+  disabled: disabled;
+}
+/* hide */
+.div_hide {
+  display: none;
+}
+
+
+/* entry row */
+.clear_both {
+  clear: both;
+}
+.div_entry_hide {
+  display: none;
+}
+.div_entry_list_row {
+  float: left;
+  font-size: 14px;
+  text-align: left;
+  padding: 2px;
+  max-height: 18px;
+  width: 600px;
+  border: 1px solid black;
+  border-bottom: 0px;
+}
+.div_entry_row {
+  padding-left: 10px;
+  border: 1px solid black;
+  border-bottom: 0px;
+}
+.div_entry_bottom {
+  padding: 2px;
+  vertical-align: middle;
+  text-align: center;
+  min-height: 25px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid black;
+}
+.id_msg_img {
+  width: 300px;
+  height: 400px;
+}
+
+/* pagination */
+.dv_pagination {
+  margin: 10px 0;
+  line-height: 15px;
+  vertical-align: middle;
+}
+
+.dv_pagination li {
+  list-style: none;
+  float: left;
+  padding: 2px 6px;
+  margin: 0 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5px;
+  text-align: center;
+  font-weight: bold;
+  display: list-item;
+  vertical-align: middle;
+}
+
+.inactive_page_li {
+  background-color: #EDEDED;
+  border: 1px solid #BABABA;
+  color: #BABABA;
+  cursor: default;
+}
+
+.active_page_li {
+  background-color: #F2F2F2;
+  border: 1px solid #3E6D8E;
+  color: #3E6D8E;
+  cursor: pointer;
+}
+
+.force_page_li {
+  background-color: #3E6D8E;
+  border: 1px solid #3E6D8E;
+  color: #FFF;
+  cursor: pointer;
+}
+
+/* promptbox */
+.promptbox_dv {
+  width: 50%;
+  margin: 100px 25%;
+  box-shadow: 0 0 5px 5px #888;
+}
+
+/* close */
+.span_close {
+  cursor: pointer;
+  font-weight: 700;
+}

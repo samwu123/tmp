@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>风格Tag管理</title>
+    <link rel="stylesheet" href="css/admin_base.css" type="text/css" />
+    <link rel="stylesheet" href="css/admin_style_tag.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.bbq.js"></script>
+    <script type="text/javascript" src="js/jquery.sha1.js"></script>
+    <script type="text/javascript" src="js/momo_base.js"></script>
+    <script type="text/javascript" src="js/admin_base.js"></script>
+    <script type="text/javascript" src="js/admin_base_main.js"></script>
+    <script type="text/javascript" src="js/admin_style_tag.js"></script>
+  </head>
+
+  <body>
+    <div class="frm_container">
+      <div class="frm_left" id="siteleft"></div>
+      <div class="frm_right">
+        <div class="frm_right_top">
+          <div class="top_right">
+            <div class="userinfo" id="userinfo"></div>
+            <div class="icon"><span class="config" />
+            </div>
+            <div class="icon"><span class="logout" />
+            </div>
+          </div>
+        </div>
+        <div class="frm_right_content">
+          <div class="dv_style_content">
+            <h1 class="ui-title-brand">风格Tag</h1>
+            <hr />
+            <div>
+              <table id="tag_tbl_content">
+                <tr>
+                  <td class="td_style_name"><span class="style_name">优雅</span></td><td class="tag_list"><span class="span_tag">优雅</span><span class="span_tag">精致</span><span class="span_tag">低调</span></td><td><span class="add_tag">
+                    <select class="tag_select">
+                      <option>111</option><option>222</option><option>333</option>
+                    </select>
+                    <button class="tag_add_btn">
+                      添加
+                    </button> </span><span class="do_modify_span"><span class="save_span">Save</span><span class="cancel_span">Cancel</span></span></td>
+                </tr>
+                <tr>
+                  <td class="td_style_name"><span class="style_name">中性</span></td><td class="tag_list"><span class="span_tag">中性</span><span class="span_tag">朋克</span><span class="span_tag">个性</span><span class="span_tag">摩登</span></td><td><span class="add_tag">
+                    <select class="tag_select">
+                      <option>111</option><option>222</option><option>333</option>
+                    </select>
+                    <button class="tag_add_btn">
+                      添加
+                    </button> </span><span class="do_modify_span"><span class="save_span">Save</span><span class="cancel_span">Cancel</span></span></td>
+                </tr>
+                <tr>
+                  <td class="td_style_name"><span class="style_name">学院</span></td><td class="tag_list"><span class="span_tag">学院</span><span class="span_tag">复古</span></td><td><span class="add_tag">
+                    <select class="tag_select">
+                      <option>111</option><option>222</option><option>333</option>
+                    </select>
+                    <button class="tag_add_btn">
+                      添加
+                    </button> </span><span class="do_modify_span"><span class="save_span">Save</span><span class="cancel_span">Cancel</span></span></td>
+                </tr>
+                <tr>
+                  <td class="td_style_name"><span class="style_name">休闲</span></td><td class="tag_list"><span class="span_tag">休闲</span><span class="span_tag">运动</span><span class="span_tag">牛仔</span></td><td><span class="add_tag">
+                    <select class="tag_select">
+                      <option>111</option><option>222</option><option>333</option>
+                    </select>
+                    <button class="tag_add_btn">
+                      添加
+                    </button> </span><span class="do_modify_span"><span class="save_span">Save</span><span class="cancel_span">Cancel</span></span></td>
+                </tr>
+                <tr>
+                  <td class="td_style_name"><span class="style_name">欧美</span></td><td class="tag_list"><span class="span_tag">欧美</span><span class="span_tag">简约</span></td><td><span class="add_tag">
+                    <select class="tag_select">
+                      <option>111</option><option>222</option><option>333</option>
+                    </select>
+                    <button class="tag_add_btn">
+                      添加
+                    </button> </span><span class="do_modify_span"><span class="save_span">Save</span><span class="cancel_span">Cancel</span></span></td>
+                </tr>
+                <tr>
+                  <td class="td_style_name"><span class="style_name">日韩</span></td><td class="tag_list"><span class="span_tag">日韩</span><span class="span_tag">小清新</span><span class="span_tag">甜美</span><span class="span_tag">波西米亚</span><span class="span_tag">民族风</span></td><td><span class="add_tag">
+                    <select class="tag_select">
+                      <option>111</option><option>222</option><option>333</option>
+                    </select>
+                    <button class="tag_add_btn">
+                      添加
+                    </button> </span><span class="do_modify_span"><span class="save_span">Save</span><span class="cancel_span">Cancel</span></span></td>
+                </tr>
+              </table>
+              <div class="dv_add_style">
+                请输入新的风格名称：
+                <input value=""/>
+                <button id="btn_add_style">
+                  添加
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

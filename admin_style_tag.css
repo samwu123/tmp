@@ -1,0 +1,124 @@
+.ui-title-brand {
+  font-size: 25px;
+  font-weight: 700;
+  color: #999999;
+}
+
+.dv_style_content {
+  padding: 70px 10px;
+}
+
+#tag_tbl_content {
+  width: 100%;
+  font-size: 12px;
+}
+
+#tag_tbl_content, #tag_tbl_content td {
+  border: 1px solid black;
+}
+
+.td_style_name {
+  padding: 10px;
+}
+
+/*style name*/
+span.style_name {
+  font-weight: 700;
+}
+
+td.tag_list {
+  padding: 10px;
+}
+
+/*tag list*/
+.span_tag {
+  background-color: #E0EAF1;
+  -webkit-box-shadow:1px 1px 3px #3E6D8E;
+  -moz-box-shadow:1px 1px 3px #3E6D8E;
+  box-shadow:1px 1px 3px #3E6D8E;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #3E6D8E;
+  font-size: 90%;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 4px 10px;
+  height: 22px;
+  margin: 0px 2px;
+}
+
+/*mouse on*/
+.span_tag.on {
+  -webkit-box-shadow:1px 1px 3px #7F9FB6;
+  -moz-box-shadow:1px 1px 3px #7F9FB6;
+  box-shadow:1px 1px 3px #7F9FB6;
+  color: red;
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+/*add tag option*/
+span.add_tag {
+  margin: 2px;
+}
+/*tag option*/
+.tag_select {
+  font-size: 10.5px;
+  width: 90px;
+  height: 25px;
+  color: black;
+}
+.tag_select option{
+  color: black;
+}
+/*add button*/
+.tag_add_btn {
+  font-size: 10.5px;
+}
+
+/*do modify span*/
+.do_modify_span {
+  float: right;
+  margin-top: 7px;
+  margin-right: 10px;
+}
+
+/*do modify button*/
+.do_modify_span {
+  display: none;
+}
+/*save button*/
+.save_span {
+  background-color: #cc0000;
+  color: #fff;
+  padding: 4px;
+  border: solid 1px #cc0000;
+  font-weight: bold;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0px 2px;
+}
+
+/*cancel button*/
+.cancel_span {
+  background-color: #dedede;
+  color: #333;
+  padding: 4px;
+  border: solid 1px #dedede;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0px 2px;
+}
+
+/* add style div */
+.dv_add_style {
+  margin: 10px;
+}
+.dv_add_style, .dv_add_style input, .dv_add_style button {
+  font-size: 10.5px;
+}
